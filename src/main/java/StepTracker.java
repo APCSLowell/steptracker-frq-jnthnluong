@@ -12,9 +12,10 @@ public class StepTracker
  public void addDailySteps(int s){
   mySteps += s;
   myTotalDays++;
-  if(s>myMinSteps) myActiveDays++;
+  if(s>=myMinSteps) myActiveDays++;
  }
  public double averageSteps(){
+  if(myTotalDays == 0) return 0.0;
   return (double)mySteps/(double)myTotalDays;
  }
  public int activeDays(){
